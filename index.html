@@ -1113,13 +1113,13 @@
       entries.forEach(e=>{
         if(e.isIntersecting){
           e.target.querySelectorAll('.skill-fill').forEach(bar=>{
-            bar.style.width = bar.dataset.w;
+            bar.style.width = (bar.dataset.pct || 0) + '%';
           });
           sio.unobserve(e.target);
         }
       });
     },{threshold:0.3});
-    document.querySelectorAll('.skill-group').forEach(el=>sio.observe(el));
+    document.querySelectorAll('.skill-cat').forEach(el=>sio.observe(el));
 
   </script>
 
